@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111b22">
+  <meta name="description" content="Ellen Wang — Computer Science student at the University of Sydney, exploring data analysis, AI, and creative technology.">
+  <title>Ellen Wang — Personal Terminal</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#command-input" data-i18n="skip">Skip to command input</a>
+  <div class="page-shell">
+    <header class="masthead">
+      <a class="wordmark" href="#" aria-label="Ellen Wang home"><span class="brand-mark">e<span>_</span></span><span>ellen.wang<span class="muted"> / personal terminal</span></span></a>
+      <span class="location"><span class="live-dot"></span> SYDNEY, AUSTRALIA</span>
+    </header>
+    <main class="terminal" aria-label="Ellen Wang interactive portfolio">
+      <header class="window-bar">
+        <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="window-title"><span aria-hidden="true">⌘</span> ellen@portfolio: ~</div>
+        <div class="window-controls">
+          <button id="theme-toggle" class="icon-button" type="button" aria-label="Switch to espresso theme" title="Switch theme"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.5 13.2A8.5 8.5 0 0 1 10.8 3.5a8.5 8.5 0 1 0 9.7 9.7Z"/></svg></button>
+          <span class="control-divider"></span>
+          <div class="language-switch" role="group" aria-label="Language"><button type="button" data-lang="zh" lang="zh-CN">中</button><span>/</span><button type="button" data-lang="en" lang="en" class="active">EN</button></div>
+        </div>
+      </header>
+      <nav class="command-nav" aria-label="Portfolio commands">
+        <span class="nav-label" data-i18n="explore">EXPLORE</span>
+        <button type="button" data-command="about"><span class="nav-prefix">./</span><span data-i18n="navAbout">about</span></button>
+        <button type="button" data-command="projects"><span class="nav-prefix">./</span><span data-i18n="navProjects">projects</span></button>
+        <button type="button" data-command="skills"><span class="nav-prefix">./</span><span data-i18n="navSkills">skills</span></button>
+        <button type="button" data-command="interests"><span class="nav-prefix">./</span><span data-i18n="navInterests">interests</span></button>
+        <button type="button" data-command="contact"><span class="nav-prefix">./</span><span data-i18n="navContact">contact</span><span class="nav-arrow">↗</span></button>
+      </nav>
+      <div class="terminal-scroll" id="terminal-scroll" tabindex="0" aria-label="Terminal output">
+        <div id="terminal-output" role="log" aria-live="polite" aria-relevant="additions"></div>
+      </div>
+      <div class="input-area">
+        <div class="suggestion-row" id="suggestion-row" aria-live="polite"></div>
+        <form id="command-form" autocomplete="off">
+          <label class="prompt" for="command-input"><span class="prompt-user">visitor</span><span class="prompt-at">@</span><span class="prompt-host">ellen</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span></label>
+          <input id="command-input" name="command" type="text" spellcheck="false" autocapitalize="none" autocorrect="off" aria-label="Enter a command" placeholder="Type help to get started…" enterkeyhint="send">
+          <button class="submit-command" type="submit" aria-label="Run command">↵</button>
+        </form>
+        <div class="input-hints"><span><kbd>tab</kbd> <span data-i18n="autocomplete">autocomplete</span></span><span><kbd>↑</kbd><kbd>↓</kbd> <span data-i18n="history">history</span></span><span class="clear-hint"><kbd>ctrl</kbd> + <kbd>L</kbd> <span data-i18n="clear">clear</span></span><span class="hint-right" data-i18n="clickHint">or click a command above</span></div>
+      </div>
+      <footer class="status-bar"><span><span class="live-dot"></span><span data-i18n="status">a little space for data, ideas & curiosity</span></span><button type="button" data-command="help"><span aria-hidden="true">?</span> <span data-i18n="help">help</span></button></footer>
+    </main>
+    <footer class="page-footer"><span>© <span id="year"></span> Ellen Wang</span><span><span data-i18n="inspired">Inspired by</span> <a href="https://terminal.satnaing.dev/" target="_blank" rel="noopener noreferrer">Sat Naing’s terminal <span aria-hidden="true">↗</span></a></span><button type="button" data-command="coffee" class="coffee-link" aria-label="Coffee easter egg">&lt; coffee /&gt;</button></footer>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
